@@ -3,12 +3,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using System;
 using MalikP.Controls.Loaders;
+using MalikP.Controls.Win32Api;
 
 namespace MalikP.Controls
 {
     public class LoaderUtil
     {
-        [Obsolete("Old...Use 'LoaderExecutionChanged' event instead of this delegate")]
+        //  [Obsolete("Old...Use 'LoaderExecutionChanged' event instead of this delegate")]
         public delegate void ControlHandler(bool value);
         public event Action<bool> LoaderExecutionChanged;
 
@@ -21,7 +22,7 @@ namespace MalikP.Controls
 
         private Control _controlWhereWaiterBeAdded;
 
-        public Point DrawLocation { get; private set; }
+        public Point? DrawLocation { get; private set; }
 
         public static LoaderVersion Version { get; set; }
 
@@ -52,6 +53,8 @@ namespace MalikP.Controls
         }
 
         private UserControl _waitControl;
+
+        public Boolean CustomLocation { get; private set; }
 
         public ILoader Loader
         {
@@ -94,16 +97,17 @@ namespace MalikP.Controls
             ReSetLoader(form, handler);
         }
 
-        public LoaderUtil(Control form, LoaderVersion version, Point drawLocation)
+        public LoaderUtil(Control form, LoaderVersion version, Point? drawLocation)
             : this(form, drawLocation)
         {
             Version = version;
         }
 
-        public LoaderUtil(Control form, Point drawLocation)
-            : this(form, null)
+        public LoaderUtil(Control form, Point? drawLocation)
+            : this(form, (ControlHandler)null)
         {
             DrawLocation = drawLocation;
+            CustomLocation = true;
         }
 
         public void ReSetLoader(Control form, ControlHandler handler)
@@ -114,7 +118,7 @@ namespace MalikP.Controls
         }
 
         public LoaderUtil(Control form)
-            : this(form, null)
+            : this(form, (ControlHandler)null)
         {
         }
 
@@ -145,9 +149,12 @@ namespace MalikP.Controls
 
         private void SetTargetControlLocationToCenter()
         {
-            if (DrawLocation == null) DrawLocation = new System.Drawing.Point((_controlWhereWaiterBeAdded.Width - _waitControl.Width) / 2, (_controlWhereWaiterBeAdded.Height - _waitControl.Height) / 2);
-
-            _waitControl.Location = DrawLocation;
+            if (!CustomLocation)
+            {
+                var metrics = Win32Helper.GetMetrics();
+                DrawLocation = new Point((_controlWhereWaiterBeAdded.Width - _waitControl.Width) / 2, ((_controlWhereWaiterBeAdded.Height - _waitControl.Height) / 2) - metrics.iMenuHeight);
+            }
+            _waitControl.Location = (Point)DrawLocation;
         }
 
         public UserControl GetLoader(LoaderVersion version)
@@ -202,6 +209,7 @@ namespace MalikP.Controls
         public void SetDrawLocation(Point drawLocation)
         {
             DrawLocation = drawLocation;
+            CustomLocation = true;
         }
     }
 }

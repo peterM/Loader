@@ -150,6 +150,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Win32Api\Win32Helper.cs" />
     <EmbeddedResource Include="Loaders\LoadScreenDragon.resx">
       <DependentUpon>LoadScreenDragon.cs</DependentUpon>
     </EmbeddedResource>
