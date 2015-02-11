@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB08DB66-752C-45F9-A51F-C0FDB48EC62E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>MalikP.Controls.Loaders</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MalikP.Controls</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoaderVersion.cs" />
+    <Compile Include="ILoader.cs" />
+    <Compile Include="Loaders\LoadScreenDragon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenDragon.Designer.cs">
+      <DependentUpon>LoadScreenDragon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenDuck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenDuck.Designer.cs">
+      <DependentUpon>LoadScreenDuck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenCat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenCat.designer.cs">
+      <DependentUpon>LoadScreenCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenBlack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenBlack.designer.cs">
+      <DependentUpon>LoadScreenBlack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenColor1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenColor1.designer.cs">
+      <DependentUpon>LoadScreenColor1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loaders\LoadScreenColor.designer.cs">
+      <DependentUpon>LoadScreenColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnumUtils.cs" />
+    <Compile Include="LoaderUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Loaders\LoadScreenDragon.resx">
+      <DependentUpon>LoadScreenDragon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loaders\LoadScreenDuck.resx">
+      <DependentUpon>LoadScreenDuck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loaders\LoadScreenCat.resx">
+      <DependentUpon>LoadScreenCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loaders\LoadScreenBlack.resx">
+      <DependentUpon>LoadScreenBlack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loaders\LoadScreenColor1.resx">
+      <DependentUpon>LoadScreenColor1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loaders\LoadScreenColor.resx">
+      <DependentUpon>LoadScreenColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loader0.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loader1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\catLoader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color1Loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\LoaderDragon.gif" />
+    <Content Include="Resources\LoaderDuck.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
